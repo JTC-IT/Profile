@@ -1,0 +1,274 @@
+:root{
+    --header-width: 300px;
+    --mainColor: #01FFFF;
+    --bgColor: #1B2631;
+    --txtColor: #C9D1D9;
+    --hoverColor: #484b58;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-family: 'Play', sans-serif;
+    transition: 0.5s;
+    background-color: var(--bgColor) ;
+    color: var(--txtColor);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 10px;
+}
+
+header {
+    height: 100%;
+    border-left: 7px solid var(--mainColor);
+}
+
+#header {
+    width: 100%;
+    height: auto;
+    margin-left: 5%;
+    padding: 50px 20px;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    float: none;
+}
+
+#header .header_top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#header .avata {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#header .my_title {
+    margin: 1rem;
+}
+
+#header .my_title .my_name {
+    text-align: center;
+}
+
+#header .my_title .my_job {
+    display: block;
+    font-size: 0.8rem;
+    line-height: 30px;
+    text-align: center;
+    color: var(--txtColor);
+}
+
+#header .my_title .social_link {
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+}
+
+#header .my_title .social_link a {
+    color: var(--txtColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    background-color: var(--hoverColor);
+    width: 34px;
+    height: 34px;
+    margin: 5px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+#header .my_title .social_link a:hover {
+    background-color: var(--mainColor);
+    color: #1B2631;
+}
+
+#header button {
+    color: var(--txtColor);
+    display: block;
+    margin: 10px 0;
+    align-items: flex-start;
+    background-color: var(--hoverColor);
+    border: 1px solid #626368;
+    border-radius: 6px;
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    padding: 6px;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#header button:hover {
+    border-color: var(--mainColor);
+}
+
+#header button:active {
+    color: black;
+    background-color: var(--mainColor);
+}
+
+#tog_menu{
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 7%;
+    color: var(--mainColor);
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.397);
+    cursor: pointer;
+    transition: 0.5s;
+    display: none;
+}
+
+#tog_menu_btn_menu {
+    width: 100%;
+    height: 100%;
+}
+
+#tog_menu_btn_close{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.nav_menu {
+    width: auto;
+    height: 70px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: sticky;
+    top: 0;
+    transition: all 0.5s;
+}
+
+.sticky {
+    height: 50px;
+    background-color: var(--bgColor);
+}
+
+.nav_menu a {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.5s;
+    padding: 12px 15px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav_menu a:hover {
+    border-bottom: 1px solid var(--hoverColor);
+}
+
+.nav_menu a.active {
+    border-bottom: 2px solid var(--mainColor);
+}
+
+.nav_menu a ion-icon {
+    display: inline-block;
+    font-size: 25px;
+    --ionicon-stroke-width: 60px;
+    color: var(--hoverColor);
+}
+
+.nav_menu a.active ion-icon{
+    color: inherit;
+}
+
+.nav_menu a span {
+    display: inline-block;
+    margin-left: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+}
+
+#body {
+    height: auto;
+    transition: all 0.5s;
+    color: var(--txtColor);
+    padding: 0 20px;
+}
+
+@media screen and (max-width: 789px){
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height: 200px;
+        width: auto;
+    }
+
+    header #header {
+        height: 150px;
+        width: auto;
+        margin: 0 10px;
+        padding: 10px;
+        position: static;
+    }
+
+    header #header .header_top {
+        flex-direction: row;
+    }
+
+    header #header .header_top .avata {
+        height: 150px;
+        width: auto;
+    }
+
+    .nav_menu a ion-icon {
+        display: none;
+    }
+
+    #tog_menu {
+        display: inline-block;
+    }
+}
+
+
+.body_item {
+    width: auto;
+    height: auto;
+}
+
+.body_tille {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+.body_tille:first-child {
+    padding-top: 60px;
+}
+
+ .body_content {
+     padding: 1rem;
+     line-height: 1.8rem;
+     letter-spacing: 41;
+ }
+
+ .body_content p {
+     letter-spacing: 2;
+}
