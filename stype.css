@@ -12,27 +12,33 @@
     padding: 0;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bgColor) ;
+    color: var(--txtColor);
+    border-left: 7px solid var(--mainColor);
+}
+
 li {
     list-style: none;
 }
 
-body {
-    font-family: 'Play', sans-serif;
-    transition: 0.5s;
-    background-color: var(--bgColor) ;
-    color: var(--txtColor);
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-column-gap: 10px;
+a {
+    text-decoration: none
+}
+
+.content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header {
     height: 100%;
-    border-left: 7px solid var(--mainColor);
 }
 
 #header {
-    width: 100%;
+    width: auto;
     height: auto;
     margin-left: 5%;
     padding: 50px 20px;
@@ -58,36 +64,34 @@ header {
 }
 
 #header .my_title {
-    margin: 1rem;
+    margin: 10px 5px;
+    width: 100%;
 }
 
-#header .my_title .my_name {
-    text-align: center;
+#header .my_title .my_name{
+    font-size: 1.5rem;
+    margin-bottom: 0;
 }
 
 #header .my_title .my_job {
     display: block;
     font-size: 0.8rem;
     line-height: 30px;
-    text-align: center;
     color: var(--txtColor);
 }
 
 #header .my_title .social_link {
     display: flex;
-    padding: 5px;
+    padding: 0.3em;
     justify-content: center;
 }
 
 #header .my_title .social_link a {
     color: var(--txtColor);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 16px;
     background-color: var(--hoverColor);
-    width: 34px;
-    height: 34px;
+    width: 2em;
+    height: 2em;
     margin: 5px;
     border-radius: 50%;
     transition: 0.5s;
@@ -101,14 +105,14 @@ header {
 #header button {
     color: var(--txtColor);
     display: block;
-    margin: 10px 0;
+    margin-top: 10px;
     align-items: flex-start;
     background-color: var(--hoverColor);
     border: 1px solid #626368;
     border-radius: 6px;
     font-family: 'Play', sans-serif;
     font-size: 14px;
-    padding: 6px;
+    padding: 4px;
     text-align: center;
     transition: 0.5s;
     cursor: pointer;
@@ -180,45 +184,60 @@ header {
     font-size: 15px;
 }
 
+.nav_menu a.active span{
+    color: inherit;
+    display: inline-block;
+}
+
 #body {
-    height: auto;
     transition: all 0.5s;
     color: var(--txtColor);
     padding: 0 20px;
 }
 
-@media screen and (max-width: 768px){
-    body {
-        grid-template-columns: 1fr;
-    }
-
+@media screen and (max-width: 991px){
     header {
-        height: 200px;
         width: auto;
+        height: 200px;
     }
 
     header #header {
-        height: 150px;
+        height: 160px;
         width: auto;
         margin: 0 10px;
-        padding: 10px;
+        padding: 5px;
         position: static;
     }
 
     header #header .header_top {
         flex-direction: row;
+        height: 100%;
+        padding: 1em 0;
     }
 
     header #header .header_top .avata {
-        height: 150px;
+        height: 100%;
         width: auto;
     }
 
-    #header .my_title .my_name {
-        font-size: 1.2rem;
+    #header .my_title .my_name, .my_job {
+        font-size: 1em;
     }
 
-    .nav_menu a ion-icon {
+    #header .my_title .my_job {
+        font-size: 0.7em;
+    }
+
+    #header .my_title .social_link a {
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    #header .my_title .social_link a ion-icon{
+        font-size: 0.75em;
+    }
+
+    .nav_menu a span {
         display: none;
     }
 }
@@ -229,12 +248,14 @@ header {
     height: auto;
 }
 
+.body_item:last-child {
+    margin-bottom: 30px;
+}
+
 .body_tille {
     width: 100%;
     height: auto;
-    padding: 10px 0;
-    text-align: left;
-    letter-spacing: 1px;
+    padding: 12px 0;
 }
 
 .body_tille:first-child {
@@ -249,4 +270,15 @@ header {
 
  .body_content p {
      letter-spacing: 2;
+}
+
+footer {
+    width: auto;
+    height: 50px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/-1;
+    background-image: linear-gradient(to right,var(--bgColor), var(--mainColor));
 }

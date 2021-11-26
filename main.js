@@ -1,20 +1,3 @@
-// function slideMenu(){
-//     //on
-//     document.getElementById('tog_menu_btn_menu').onclick = function(){
-//         document.getElementById("header").style.marginLeft = "0px";
-//         document.getElementById("body").style.marginLeft = "300px";
-//         document.getElementById('tog_menu_btn_menu').style.display = "none";
-//         document.getElementById('tog_menu_btn_close').style.display = "inline-block";
-//     }
-//     //off
-//     document.getElementById('tog_menu_btn_close').onclick = function(){
-//         document.getElementById("header").style.marginLeft = "-300px";
-//         document.getElementById("body").style.marginLeft = "0px";
-//         document.getElementById('tog_menu_btn_close').style.display = "none";
-//         document.getElementById('tog_menu_btn_menu').style.display = "inline-block";
-//     }
-// }
-
 function activeMenu(){
     const menuItems = document.querySelectorAll('.menuItem');
     const menuLength = menuItems.length;
